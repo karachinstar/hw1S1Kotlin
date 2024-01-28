@@ -62,11 +62,7 @@ fun addContactPhoneOrMail(n: String) {
     if (n.filter { it == ' ' }.count() == 2) {
         val words = n.split("\\s".toRegex()).toTypedArray()
         if (words[1] == "phone") {
-            println(words[2])
-            println(words[2][0])
             if (words[2].contains(Regex("""[0-9]+"""))) {
-                val phone = words[2]
-                println(words[2][0])
                 if ((words[2][0]).toString().contains("""[0-9]""".toRegex()) || (words[2][0]).toString().contains("""[+]""".toRegex())) {
                     phoneContact += mapOf(words[0] to words[2])
                     println("Контакт добавлен")
